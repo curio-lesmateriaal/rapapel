@@ -158,16 +158,27 @@ button{
   cursor: pointer;
 }
 
+
+.side-by-side {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+
+.payment-options {
+  display: flex;
+  gap: 1em;
+}
+
 .payment-option{
   height: 64px;
 }
 
-.sidy-by-side{
-}
-
-.description{
+.description {
   flex: 1;
 }
+
 
 footer{
   padding: 1em;
@@ -200,12 +211,23 @@ footer{
   .hidden-on-sm{
     display: none;
   }
+
+  .sidy-by-side {
+    display: flex; 
+    justify-content: space-between; 
+  }
+
+  .payment-options {
+    justify-content: center;
+  }
 }
 
-/* 
-  ##Device = Tablets, Ipads (portrait)
-  ##Screen = B/w 768px to 1024px
-*/
+
+@media only screen and (max-width: 768px) {
+  .sidy-by-side {
+      flex-direction: column;
+  }
+}
 
 @media (max-width: 1024px) {
   .logo{
