@@ -12,7 +12,6 @@
 body, html{
   margin: 0;
   padding: 0;
-
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #FCFCFC;
 }
@@ -32,11 +31,8 @@ header{
 
 .header-content{
   padding: 1em;
-
   text-align: center;
   background-color: rgba(255, 255, 255, 0.5);
-
-  /* Deze animatie wordt onder aan dit bestand gedefinieerd/aangemaakt */
   -webkit-animation: fadein 4s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 4s; /* Firefox < 16 */
   -ms-animation: fadein 4s; /* Internet Explorer */
@@ -93,7 +89,6 @@ table tfoot{
 }
 
 article{
-  border-left: 5px solid #27AE60;
   padding-left: 10px;
   margin: 1em 1em 1em 0;
 }
@@ -103,11 +98,8 @@ article:last-of-type{
 
 article h2{
   margin: 0;
-  padding: 1.5em;
-  border-left: none;
   background-position: center;
   background-size: cover;
-  text-align: center;
   text-shadow:
   0 0 0 #FCFCFC,
   -1px -1px 0 #FCFCFC,
@@ -126,6 +118,11 @@ article h2.rides{
 }
 article h2.open-forever{
   background-image: url('../images/open-james-lee.jpg');
+}
+
+.element.style {
+  display: flex;
+
 }
 
 .product{
@@ -158,27 +155,16 @@ button{
   cursor: pointer;
 }
 
-
-.side-by-side {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1em;
-}
-
-.payment-options {
-  display: flex;
-  gap: 1em;
-}
-
 .payment-option{
   height: 64px;
 }
 
-.description {
-  flex: 1;
+.sidy-by-side{
 }
 
+.description{
+  flex: 1;
+}
 
 footer{
   padding: 1em;
@@ -211,23 +197,12 @@ footer{
   .hidden-on-sm{
     display: none;
   }
-
-  .sidy-by-side {
-    display: flex; 
-    justify-content: space-between; 
-  }
-
-  .payment-options {
-    justify-content: center;
-  }
 }
 
-
-@media only screen and (max-width: 768px) {
-  .sidy-by-side {
-      flex-direction: column;
-  }
-}
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
 
 @media (max-width: 1024px) {
   .logo{
@@ -237,10 +212,6 @@ footer{
 
   .row {
     flex-direction: column;
-}
-   .sidy-by-side{
-    flex-direction: column;
-    align-items: center;
   }
 }
 
@@ -249,22 +220,22 @@ footer{
   display: flex;
 }
 
-.sidy-by-side {
+.sidy-by-side{
   flex-direction: column;
+  align-items: center;
 }
 
-  .emphasize {
-    border-left: 5px solid #27AE60;
-    box-shadow: 1px 0px 5px 0px #27AE60;
-    padding: 1em;
+.emphasize {
+  border-left: 5px solid #27AE60;
+  box-shadow: 1px 0px 5px 0px #27AE60;
+  padding: 1em;
 }
 
 .emphasize h2 {
-    margin: 0;
-    text-align: center;
-    border-left: none;
+  margin: 0;
+  text-align: center;
+  border-left: none;
 }
-
 
 /*
   help! Het lettertype wordt om een of andere reden niet goed geladen... Misschien heeft het iets met het pad naar de fonts te maken?
@@ -308,4 +279,63 @@ to   { opacity: 1; }
 @-o-keyframes fadein {
 from { opacity: 0; }
 to   { opacity: 1; }
+}
+
+/* -- Added Product Detail Page CSS -- */
+
+.product-detail {
+  margin: 2em 0;
+}
+
+.product-detail h2 {
+  margin-bottom: 1em;
+  border-left: 5px solid #27AE60;
+}
+
+.product-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2em;
+}
+
+.product-image {
+  flex: 1;
+}
+
+.product-image img {
+  max-width: 100%;
+}
+
+.product-description {
+  flex: 1;
+}
+
+.product-description p {
+  margin-bottom: 1em;
+}
+
+button {
+  padding: 0.5em 1em;
+  background-color: #27AE60;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .product-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-image, .product-description {
+    text-align: center;
+  }
+
+  button {
+    width: auto;
+  }
 }
